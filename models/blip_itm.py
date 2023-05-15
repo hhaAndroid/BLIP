@@ -69,6 +69,7 @@ class BLIP_ITM(nn.Module):
         
 def blip_itm(pretrained='',**kwargs):
     model = BLIP_ITM(**kwargs)
+    print(model)
     if pretrained:
         model,msg = load_checkpoint(model,pretrained)
         assert(len(msg.missing_keys)==0)
